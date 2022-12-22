@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<h1 class="home-header">Home</h1>
+<section class="content">
+  <div>
+    <img class="twitter-content-icon" src="static\img\twitter.png"/>
+  </div>
+    <section class="post_form">
+      
+        <form action="/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!--<input type="text" name="handle" placeholder="@twitter_handle"/> -->
+            <input type="text" name="name" placeholder="Name" style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif;"required/>
+            <textarea name="body" placeholder="Tell Us Anything..." style="font-size:12pt; font-family: Arial, Helvetica, sans-serif;" required></textarea>
+            
+            <input class='post-btn' type='submit' value="Tweet"/>
+            <input type="file" name="image" id="uploadfile">
+        </form>
+
+    </section>
+    <section class="posts">
+        <ul>
+            {% for post in posts %} 
+            <li>
+              <img class="menu_icon js-menu-icon" src="{% static 'img\option.png' %}" />
+              <div class="menu">
+                
+                  <a href="/delete/{{ post.id }}">Delete</a><br>
+                  <a href="/edit/{{post.id}}">Edit</a>
+                
+              </div>
+              <div class='logo'>
+                <img src="{% static 'img/user.png' %}" />
+              </div>
+              <div class="name_body">
+                <div class="handle">{{ post.handle }}</div>
+                <div class='name'>{{ post.name }}</div>
+                <div class='datetime'>{{ post.created_at }}</div>
+                <div class="body">{{ post.body }}</div>
+                {% if post.image.url %}
+                <img src="{{post.image.url}}" alt="" style ="width:200px"/> {% endif %}
+
+                {% csrf_token %}
+
+                
+
+                <!-- this line need to be looked at, in connection with line 97
+                      in the CSS-->
+                <div class="like-btn">
+                
+                  <a href="/like/{{post.id}}"><img src="static\img\heart.png" style="width: 15px;"/> {{ post.likes }}</a></div>
+              </div>
+              
+            </li>   
+            {% endfor %}
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
+  <script src="{% static 'js/posts.js' %}"></script>
+
+</section> 
+
+
+{% endblock %}

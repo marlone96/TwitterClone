@@ -1,0 +1,145 @@
+/*
+COMMON
+********************/
+
+html,
+body {
+    height: 100%;
+}
+
+.home-header {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    background-color: #1da0f223;
+    height: 45px;
+
+    
+}
+
+.twitter-icon {
+    width: 45px;
+    position: fixed;
+    margin-left: 90%;
+    opacity:20%;
+
+}
+
+.content .twitter-content-icon {
+    width: 50px;
+    flex-basis: 10%;
+}
+
+
+.content {
+    max-width: 800px;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.079);
+    border-radius: 30px;
+}
+
+.content .post-btn {
+    max-width: 150px;
+    background-color: #1DA1F2;
+
+}
+
+/*
+POST
+********************/
+.post_form {
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.469);
+    flex-wrap: wrap;
+}
+
+
+.post_form input {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.post_form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+.posts ul {
+    padding: 0;
+}
+
+.posts li {
+    display: flex;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    background-color: rgba(95, 95, 95, 0.06);
+}
+
+.posts li .menu_icon {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.posts li .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid rgba(204, 204, 204, 0.486);
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.posts li .menu a {
+    text-decoration: none;
+}
+
+.posts li .logo {
+    flex-basis: 15%;
+}
+
+.posts li .logo img {
+    width: 60%;
+}
+
+.posts li .name_body {
+    flex-basis: 85%;
+}
+
+.posts li .name_body .handle  {
+    position: absolute;
+    margin-left: 13%;
+}
+
+.posts li .name_body .name {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.posts li .name_body .body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.posts li .name_body .datetime {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+    .posts li .name_body .name {
+        font-size: 15px;
+    
+    }
+}
+
+.posts .like-btn {
+    text-decoration: none;
+}

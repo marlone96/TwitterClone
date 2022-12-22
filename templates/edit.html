@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<h1 class="home-header">Edit</h1>
+<!-- Needs attention to "not valid" when all requirements are met-->
+<section class="content">
+    <section class="post_form">
+        <form action="/edit/{{posts.id}}/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!--<input type="text" value= "{{posts.handle}}" /> -->
+            <input type="text" name="name" placeholder="Name" value="{{posts.name}}" required/>
+            <textarea name="body" placeholder="tell us anything.." value="{{ posts.body }}" style="color: black; font-size:medium; font-family: 'Times New Roman', Times, serif;" required></textarea>
+            {% if posts.image.url %}
+            <img src="{{posts.image.url}}" alt="" style ="width:200px"> 
+
+            <input type="file" class="uploadfile">
+            {% endif %}
+            <div class="edit-btn">
+                <button class="cancelbtn">
+                    <a href="{% url 'index' %}">Cancel</a>
+                </button> 
+                <input type='submit' value="update"/>
+            </div>
+        
+        </form>
+
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
+  <script src="{% static 'js/posts.js' %}"></script>
+
+</section> 
+
+
+{% endblock %}
