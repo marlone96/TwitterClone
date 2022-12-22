@@ -8,7 +8,8 @@ Check out [LIVE DEMO]( https://twitterclone.marlonespinosa1.repl.co/)
 
 # Screenshot
 
-<img width="961" alt="Screen Shot 2022-12-18 at 9 02 34 PM" src="https://user-images.githubusercontent.com/51929948/208336134-23209985-aa19-46e3-aa39-4c28cb22a77d.png">
+![Screenshot 2022-12-21 205050](https://user-images.githubusercontent.com/115507570/209059597-f6933240-1b6c-4f20-80bf-631ac894510e.png)
+
 
 
 
